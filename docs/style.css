@@ -1,0 +1,112 @@
+:root {
+	--text: #ffffff;
+	--background: #151b1d;
+	--primary: #a30036;
+	--primary-hover: #b90a28;
+	--secondary: #2c2f33;
+	--secondary-dark: #1e2022;
+	--secondary-hover: #34383d;
+	--accent: #6b1a5b;
+}
+
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+main {
+	max-width: 600px;
+	margin: auto;
+}
+
+html {
+	background-color: var(--background);
+	color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+	font-family: "Outfit", sans-serif;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+	cursor: default;
+}
+
+h1.title {
+	font-weight: 900;
+	font-size: 64pt;
+	margin-bottom: 0;
+}
+
+h2.subtitle {
+	margin-top: 0;
+	margin-bottom: 24pt;
+	font-weight: 600;
+	font-size: 24pt;
+}
+
+h1.title:hover, h2.subtitle:hover {
+	text-shadow: 0px 0px 4pt var(--text);
+	transition: text-shadow 1s ease-out;
+}
+
+.buttons-container {
+	display: block;
+	width: max-content;
+	margin: 0 auto;
+}
+
+button {
+	border-width: 0px;
+	border-radius: 8px;
+	padding: 10px 20px;
+	font-family: "Outfit", sans-serif;
+	font-weight: 500;
+	font-size: 12pt;
+	background-color: var(--secondary);
+	color: var(--text);
+}
+
+button:hover {
+	background-color: var(--secondary-hover);
+	box-shadow: 0px 1px 8px var(--secondary);
+	transition:
+		background-color 0.2s ease,
+		box-shadow 0.3s ease;
+}
+
+button.primary {
+	background-color: var(--primary);
+}
+
+button.primary:hover {
+	background-color: var(--primary-hover);
+	box-shadow: 0px 4px 32px var(--primary);
+	transform: scale(1.03);
+	transition:
+		background-color 0.5s ease,
+		box-shadow 1s ease,
+		transform 0.75s ease;
+}
+
+button.secondary {
+	background-color: var(--background);
+}
+
+button.secondary:hover {
+	background-color: var(--secondary-dark);
+	box-shadow: none;
+	transition:
+		background-color 0.5s ease;
+}
+
+.buttons-container.list {
+	width: 50%;
+}
+
+.buttons-container.list button {
+	width: 100%;
+	display: block;
+	margin: 8px 0;
+}
