@@ -69,6 +69,7 @@ button {
 }
 
 button:hover {
+	cursor: pointer;
 	background-color: var(--secondary-hover);
 	box-shadow: 0px 1px 8px var(--secondary);
 	transition:
