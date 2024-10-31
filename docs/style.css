@@ -32,7 +32,7 @@ html {
 }
 
 header, main, footer {
-	min-width: 320px;
+	min-width: 370px;
 	max-width: 100%;
 	width: 560px;
 	padding: inherit 20px;
@@ -44,6 +44,8 @@ main {
 }
 
 footer {
+	min-width: 360px;
+	max-width: 95%;
 	width: 460px;
 	margin-top: 24pt;
 	padding-top: 12pt;
@@ -162,6 +164,8 @@ button.secondary:active {
 }
 
 .buttons-container.list {
+	min-width: 360px;
+	max-width: 95%;
 	width: 460px;
 }
 
