@@ -5,20 +5,25 @@
 	--primary-hover: #b90a28;
 	--secondary: #2c2f33;
 	--secondary-dark: #1e2022;
-	--secondary-hover: #34383d;
+	--secondary-light1: #34383d;
+	--secondary-light2: #4d555e;
 	--accent: #6b1a5b;
 	--f-outfit: "Outfit", sans-serif;
 }
 
-a {
-	color: inherit;
-	text-decoration: inherit;
+@keyframes fadeInSweep {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
-main {
-	max-width: 640px;
-	padding: inherit 20px;
-	margin: auto;
+.fade-in-sweep {
+	animation: fadeInSweep 1.6s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
 }
 
 html {
@@ -26,7 +31,30 @@ html {
 	color: var(--text);
 }
 
+header, main, footer {
+	max-width: 560px;
+	padding: inherit 20px;
+	margin: 0 auto;
+}
+
+main {
+	margin-top: 25vh;
+}
+
+footer {
+	width: 460px;
+	margin-top: 24pt;
+	padding-top: 12pt;
+	border-top: 1px solid var(--secondary-light1);
+	color: var(--secondary-light2);
+	text-align: center;
+	font-family: var(--f-outfit);
+	font-weight: 200;
+	font-size: 11pt;
+}
+
 h1, h2, h3 {
+	user-select: none;
 	text-align: center;
 	font-family: var(--f-outfit);
 }
@@ -42,7 +70,7 @@ h1.title {
 }
 
 h2.subtitle {
-	margin: 0 inherit 24pt;
+	margin: 0 0 24pt;
 	font-weight: 600;
 	font-size: 24pt;
 }
@@ -52,13 +80,13 @@ h1.title:hover, h2.subtitle:hover {
 	transition: text-shadow 1s ease-out;
 }
 
-.buttons-container {
-	display: block;
-	width: max-content;
-	margin: 0 auto;
+a {
+	color: inherit;
+	text-decoration: inherit;
 }
 
 button {
+	user-select: none;
 	border-width: 0px;
 	border-radius: 8px;
 	padding: 10px 20px;
@@ -71,11 +99,19 @@ button {
 
 button:hover {
 	cursor: pointer;
-	background-color: var(--secondary-hover);
+	background-color: var(--secondary-light1);
 	box-shadow: 0px 1px 8px var(--secondary);
 	transition:
-		background-color 0.2s ease,
-		box-shadow 0.3s ease;
+		background-color 0.1s cubic-bezier(0.215, 0.610, 0.355, 1),
+		box-shadow 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+button:active {
+	background-color: var(--secondary-light2);
+	box-shadow: 0px 1px 16px var(--secondary-light1);
+	transition:
+		background-color 0.3s cubic-bezier(0.215, 0.610, 0.355, 1),
+		box-shadow 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 button.primary {
@@ -100,11 +136,27 @@ button.secondary:hover {
 	background-color: var(--secondary-dark);
 	box-shadow: none;
 	transition:
-		background-color 0.5s ease;
+		background-color 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+button.secondary:active {
+	border: 2px solid var(--text);
+	background-color: var(--secondary);
+	box-shadow: none;
+	transition:
+		border 0.1s cubic-bezier(0.215, 0.610, 0.355, 1),
+		background-color 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.buttons-container {
+	user-select: none;
+	display: block;
+	width: max-content;
+	margin: 0 auto;
 }
 
 .buttons-container.list {
-	width: 50%;
+	width: 460px;
 }
 
 .buttons-container.list button {
